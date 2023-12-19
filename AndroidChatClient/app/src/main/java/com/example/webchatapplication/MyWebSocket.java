@@ -56,15 +56,15 @@ public class MyWebSocket extends WebSocketAdapter {
             Log.d("Check", json.toString());
             String type = (String) json.get("type");
 
-            if (type.equals("join")) {
+            if ("join".equals(type)) {
                 newMessage = (String)json.get("user") + " has joined the " + (String)json.get("room");
             }
 
-            if (type.equals("leave")) {
+            if ("leave".equals(type)) {
                 newMessage = (String)json.get("user") + " has left the " + (String)json.get("room");
             }
 
-            if (type.equals("message")) {
+            if ("message".equals(type)) {
                 newMessage = (String)json.get("user") + ": " + (String)json.get("message");
             }
 
